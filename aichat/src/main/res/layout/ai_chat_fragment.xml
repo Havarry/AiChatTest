@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.gzhy.aichat.widget.chatLinearLayout.KPSwitchPanelLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- Title -->
+
+    <include layout="@layout/chat_layout_titlebar" />
+
+    <!--未连接网络提示-->
+    <RelativeLayout
+        android:id="@+id/rl_net_status_remide"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#e4e4e4"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/tv_net_not_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/sobot_robot_msg_text_size"
+            android:text="@string/sobot_network_unavailable"
+            android:textColor="#666666" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:layout_toLeftOf="@id/tv_net_not_connect"
+            android:contentDescription="@null"
+            android:src="@drawable/sobot_icon_tag_nonet" />
+    </RelativeLayout>
+
+    <include layout="@layout/ai_chat_main" />
+
+</com.gzhy.aichat.widget.chatLinearLayout.KPSwitchPanelLinearLayout>

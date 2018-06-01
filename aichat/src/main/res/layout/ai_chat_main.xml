@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/rl_chat_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 底部栏 -->
+        <include
+            android:id="@+id/chat_layout_bottom"
+            layout="@layout/chat_layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+        <!-- 中间聊天部分 -->
+        <com.gzhy.aichat.widget.DropdownListView
+            android:id="@+id/lv_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/chat_layout_bottom"
+            android:background="@color/sobot_lv_message_bg"
+            android:divider="@null"
+            android:listSelector="@android:color/transparent"
+            android:transcriptMode="normal" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/sobot_not_readinfo_btn">
+
+        <TextView
+            android:id="@+id/tv_notReadInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/sobot_not_readinfo"
+            android:drawablePadding="10dp"
+            android:paddingBottom="6sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="6dp"
+            android:textColor="@color/sobot_color"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- loading布局 -->
+    <!--<include
+        android:id="@+id/sobot_welcome"
+        layout="@layout/chat_layout_loading" />-->
+</FrameLayout>
